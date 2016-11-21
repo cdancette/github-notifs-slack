@@ -6,17 +6,13 @@ import configargparse
 
 p = configargparse.ArgParser(default_config_files=['config.ini'])
 
-p.add('-u', '--hook-url', required=True, env_var='HOOK_URL', help="Slack hook url")
-p.add('-t', '--token', help="Github token", required=True, env_var='TOKEN')
+p.add('-u', '--hook-url', required=True, env_var='SLACK_HOOK_URL', help="Slack hook url")
+p.add('-t', '--token', help="Github token", required=True, env_var='GITHUB_TOKEN')
 
 options = p.parse_args()
 
 slack = slackweb.Slack(url=options.hook_url)
-
-f = open("credentials")
-token = f.readline().strip()
-f.close()
-g = Github(login_or_token=token)
+g = Github(login_or_token=options.token)
 
 saved_notifs = []
 
