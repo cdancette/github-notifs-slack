@@ -9,7 +9,12 @@ This app sends incoming notifications from github to a slack hook.
 - Put those two parameters in the `config.ini` file (copied from `config.ini.dist`) OR create the 
 `SLACK_HOOK` and `GITHUB_TOKEN` environment variables
 
-- run the app
+- run the app: 
+
+```
+pip install -r requirements.txt
+python main.py
+```
 
 You can also run the app using the dockerfile, using the same environment variables to configure the app.
 
