@@ -16,7 +16,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-You can also run the app using the dockerfile, using the same environment variables to configure the app.
+You can also run the app using the docker, using the same environment variables to configure the app and the given dockerfile.
 
 Feel free to add issues or PR
 
